@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-18",
+  "checkedAt": "2026-11-18T14:28:59.2805914+05:30",
+  "result": "PASS for the selected free checks; not a security certification",
+  "xray": "Replaced at user request by the free checks below; no Xray service activated",
+  "artifactSha256": "1d8b47b3f6a52aa4bd4adfb731488f11c76eb5b4bcc319e6cf87ca1a03cdb024",
+  "productionCodeChanged": false,
+  "runtimeCoordinates": [
+    "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.4",
+    "pkg:maven/com.synopsys.arc.jenkinsci.plugins/job-restrictions@216.v0732cc7fb_076",
+    "pkg:maven/com.synopsys.arc.jenkinsci.plugins/job-restrictions@242.v6edda_c9e4ca_f",
+    "pkg:maven/io.jenkins.plugins/ionicons-api@88.va_4187cb_eddf1",
+    "pkg:maven/io.jenkins.plugins/node-property-enforcer@0.1.0-SNAPSHOT",
+    "pkg:maven/org.jenkins-ci.plugins/matrix-auth@3.2.10"
+  ],
+  "syft": {
+    "records": 7,
+    "version": "1.57.2",
+    "uniqueComponents": 6,
+    "scope": "JPI plus four provider JARs; no Jenkins core"
+  },
+  "grype": {
+    "suppressedFindings": 0,
+    "version": "0.122.0",
+    "findings": 0,
+    "ignoreRules": 0,
+    "minimumSeverity": "negligible",
+    "negativeControl": "PASS",
+    "includeUnfixed": true,
+    "databaseBuilt": "2026-11-18T06:21:08Z",
+    "maxDatabaseAgeHours": 24,
+    "mandatoryUpdateCheck": true,
+    "databaseValid": true,
+    "packagesChecked": 7,
+    "unknownSeverityFindingsAlsoChecked": true
+  },
+  "osv": {
+    "npmTestToolingPackages": 95,
+    "overrides": 0,
+    "onlineRuntimeLicenseUnknowns": 6,
+    "version": "2.7.1",
+    "knownVulnerabilities": 0,
+    "negativeControl": "PASS",
+    "allVulnerabilitiesIncluded": true,
+    "runtimeComponents": 6,
+    "reachabilityFiltering": false
+  },
+  "runtimeLicenseReview": {
+    "allowed": [
+      "MIT",
+      "Apache-2.0"
+    ],
+    "unresolved": 0,
+    "npmTooling": "All 95 license declarations inventoried separately; not shipped in JPI",
+    "basis": "Packaged license declarations; exact MIT License alias normalized to MIT",
+    "legalCertification": false
+  },
+  "sonar": {
+    "coveragePercent": 100,
+    "vulnerabilities": 0,
+    "coverageReports": "Existing verified reports; unchanged production source compared before reuse",
+    "codeSmells": 0,
+    "qualityGate": "PASS",
+    "bugs": 0,
+    "rulesRelaxed": false
+  },
+  "spotbugs": {
+    "classes": 26,
+    "bugs": 0,
+    "analysisErrors": 0
+  },
+  "gitleaks": {
+    "version": "8.30.1",
+    "leaks": 0,
+    "scope": "Complete staged plugin source package"
+  },
+  "defender": {
+    "remediationEnabled": false,
+    "scan": "Custom archive scan; file exclusions ignored",
+    "signatureUpdated": "2026-11-17T22:58:22+05:30",
+    "inputFiles": 5,
+    "signatureVersion": "1.463.349.0",
+    "result": "No threats found",
+    "completedAt": "2026-11-18T14:20:48.1504285+05:30"
+  },
+  "existingConfigurationFilesUnchanged": 29,
+  "requestedAgentsOnline": true,
+  "limitations": [
+    "Known-advisory and declared-license coverage, not proof of perfect security",
+    "No equivalent of proprietary Xray malicious-package intelligence, contextual analysis or operational-risk scoring",
+    "No repository download enforcement or new continuous CI service installed",
+    "No new DAST/controller scan; existing plugin HTTP permission/POST/CSRF tests retained",
+    "Finite checks cannot guarantee future Jenkins compatibility or absence of all JVM/resource issues"
+  ]
+}

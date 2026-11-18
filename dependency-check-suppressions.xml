@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+  <suppress until="2027-02-13Z">
+    <notes>CVE-2024-23900 affects matrix-project, not matrix-auth. Dependency-Check assigned the wrong product CPE. Verified against https://www.jenkins.io/security/advisory/2024-01-24/ . This exception applies only to matrix-auth 3.2.10 and this CVE.</notes>
+    <packageUrl regex="true">^pkg:maven/org\.jenkins-ci\.plugins/matrix-auth@3\.2\.10$</packageUrl>
+    <cve>CVE-2024-23900</cve>
+  </suppress>
+</suppressions>

@@ -1,0 +1,22 @@
+[
+  {
+    "file": "node-property-enforcer-0.1.0-SNAPSHOT.jpi",
+    "sha256": "1d8b47b3f6a52aa4bd4adfb731488f11c76eb5b4bcc319e6cf87ca1a03cdb024"
+  },
+  {
+    "file": "job-restrictions-216.v0732cc7fb_076.jar",
+    "sha256": "601b85f6cbe789d2c3663176b0c5ac4ebef5cb5edecc2ac7e06c45d0e3021df4"
+  },
+  {
+    "file": "job-restrictions-242.v6edda_c9e4ca_f.jar",
+    "sha256": "88395f5873792a6efc2ed858af87173b597f2e9dd432930f86029805e3235db3"
+  },
+  {
+    "file": "ionicons-api-88.va_4187cb_eddf1.jar",
+    "sha256": "3f00241f36fc03408cdcd0dbe40ab4ddd00b1a4e6ee30a2fcad9d7f51cd63b0c"
+  },
+  {
+    "file": "matrix-auth-3.2.10.jar",
+    "sha256": "5ff9bd7a6f688fb091d51ba21532bfc944941d4ad7c72fe9063cdc4f0a94ab98"
+  }
+]

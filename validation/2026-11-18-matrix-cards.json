@@ -1,0 +1,92 @@
+{
+  "completedAtUtc": "2026-11-18T10:07:31.6300142Z",
+  "scope": "Node Property Enforcer source, packaged JPI, and its optional provider dependencies only",
+  "artifactSha256": "86690b2903b5ebd2e7d09bef1b1fea4313e434894a0ab71ba826499015eff417",
+  "change": "Support Matrix Authorization 3.3 permission cards while retaining the 3.2.10 table layout",
+  "baseline": "2.555.1",
+  "dependenciesChangedInEvaluationBuild": false,
+  "java": {
+    "reportedTests": 70,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 3,
+    "instructions": 3411,
+    "branches": 438,
+    "lines": 700,
+    "classes": 26,
+    "missed": 0,
+    "spotBugs": 0
+  },
+  "javascript": {
+    "tests": 30,
+    "failures": 0,
+    "lineCoverage": 100,
+    "branchCoverage": 100,
+    "functionCoverage": 100,
+    "statementCoverage": 100
+  },
+  "matrix33Regression": {
+    "propertyContentTests": 7,
+    "formGuidanceTests": 4,
+    "failures": 0,
+    "errors": 0
+  },
+  "sonar": {
+    "gate": "PASS",
+    "lineCoverage": 100,
+    "branchCoverage": 100,
+    "bugs": 0,
+    "vulnerabilities": 0,
+    "codeSmells": 0,
+    "rulesRelaxed": false
+  },
+  "grype": {
+    "databaseDate": "2026-11-18",
+    "catalogEntries": 14,
+    "matches": 0,
+    "ignoredMatches": 0,
+    "minimumFailSeverity": "negligible",
+    "databaseFreshnessLimit": "24h"
+  },
+  "osv": {
+    "runtimePackages": 10,
+    "npmTestPackages": 95,
+    "vulnerabilities": 0,
+    "ignoreRules": 0
+  },
+  "gitleaks": {
+    "sourceFiles": 91,
+    "leaks": 0,
+    "redacted": true
+  },
+  "browser": {
+    "browser": "Chrome",
+    "matrix33": [
+      "Existing empty permissions block Save and Apply on the same form",
+      "Red guidance appears directly below the permission cards",
+      "Creator receives all five node permissions",
+      "Default No restriction blocks Save locally",
+      "Valid expression clears its error",
+      "Valid save persists all five creator grants"
+    ],
+    "deployedMatrix3210": [
+      "Both missing properties have separate field-local errors",
+      "Save retains the form",
+      "Empty permissions and No restriction both block Apply",
+      "Existing-node editing adds no creator permission",
+      "Authenticated creator auto-fill grants all five node permissions; test form discarded without saving"
+    ]
+  },
+  "deployment": {
+    "port": 19085,
+    "pluginActive": true,
+    "existingConfigurationFiles": 29,
+    "changedConfigurationFiles": 0,
+    "threeRequestedAgentsOnline": true
+  },
+  "limitations": [
+    "Finite scenario checks are not exhaustive UI or future-version guarantees",
+    "Earlier long soak and NVD results concern the prior artifact; production Java and evaluation dependency versions are unchanged",
+    "Final community ID, baseline, complete candidate verification, hosting approval and release are still pending"
+  ]
+}

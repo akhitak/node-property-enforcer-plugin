@@ -1,0 +1,9 @@
+.node-property-field-error {
+  height: auto;
+}
+.node-property-field-error[hidden] {
+  display: none;
+}
+.node-property-field-error:not([hidden]) + .validation-error-area {
+  display: none;
+}

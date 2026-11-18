@@ -1,0 +1,2 @@
+<?jelly escape-by-default='true'?>
+<div>Requires administrator-selected node properties on agent forms and before scheduling new builds.</div>

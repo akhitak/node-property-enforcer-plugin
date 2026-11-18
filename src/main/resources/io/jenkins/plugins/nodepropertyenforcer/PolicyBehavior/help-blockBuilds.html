@@ -1,0 +1,7 @@
+<div>
+  <p><strong>Checked:</strong> a node with incomplete required settings cannot start another build. Complete the listed settings in that node's configuration to let it run new builds again. Jenkins may use another suitable node; otherwise, the build waits.</p>
+  <p><strong>Unchecked:</strong> this plugin allows the node to start new builds even if its required settings are incomplete.</p>
+  <p><strong>Example:</strong> you require “Restrict jobs execution at node”, but Node A has that option turned off or set to “No restriction”. With this setting checked, Node A waits until a restriction is configured. With this setting unchecked, Node A can still start builds.</p>
+  <p>Builds already running continue. Warning messages and Save/Apply checks have their own settings below.</p>
+  <p>Only rules with “Require this option” checked count. With no required options, this setting has no effect.</p>
+</div>

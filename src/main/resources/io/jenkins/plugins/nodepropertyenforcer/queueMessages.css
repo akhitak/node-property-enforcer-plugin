@@ -1,0 +1,8 @@
+.node-property-queue-message {
+  grid-column: 1 / -1;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  margin-top: .25rem;
+}
+.node-property-queue-message > div + div { margin-top: .4rem; }

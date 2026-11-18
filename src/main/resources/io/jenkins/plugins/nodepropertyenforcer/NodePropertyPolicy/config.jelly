@@ -1,0 +1,10 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="lib/form">
+  <f:section title="Required node properties">
+    <p>Choose which options users need to turn on in each node's configuration. This plugin does not stop builds already running.</p>
+    <f:entry title="Required options" field="requirements" />
+    <f:repeatableProperty field="requirements" add="Add required option" />
+    <f:description>With no options marked as required, this plugin does not restrict saving nodes or running builds.</f:description>
+    <f:property field="behavior" />
+  </f:section>
+</j:jelly>

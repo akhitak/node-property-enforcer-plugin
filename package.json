@@ -1,0 +1,17 @@
+{
+  "name": "node-property-enforcer-tests",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test --test-concurrency=1 src/test/js/*.test.cjs",
+    "coverage": "node src/test/js/coverage.cjs"
+  },
+  "devDependencies": {
+    "@sinonjs/fake-timers": "15.5.0",
+    "istanbul-lib-coverage": "3.2.2",
+    "istanbul-lib-instrument": "6.0.3",
+    "istanbul-lib-report": "3.0.1",
+    "istanbul-reports": "3.2.0",
+    "jsdom": "27.4.0"
+  }
+}

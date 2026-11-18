@@ -1,0 +1,7 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler">
+  <j:if test="${app.hasPermission(app.READ) &amp;&amp; it.enabled}">
+    <div id="node-property-queue" data-status-url="${rootURL}/descriptorByName/io.jenkins.plugins.nodepropertyenforcer.QueueMessages/status" hidden="hidden"></div>
+    <st:adjunct includes="io.jenkins.plugins.nodepropertyenforcer.queueMessages" />
+  </j:if>
+</j:jelly>

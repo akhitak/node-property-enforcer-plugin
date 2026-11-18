@@ -1,0 +1,19 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="lib/form">
+  <f:entry title="Allow new builds only on nodes with all required options enabled" field="blockBuilds">
+    <f:checkbox default="true" />
+  </f:entry>
+  <f:entry title="Check required options before saving existing nodes" field="enforceEdits">
+    <f:checkbox default="true" />
+  </f:entry>
+  <f:entry title="Show warnings on node pages" field="showNodeWarnings">
+    <f:checkbox default="true" />
+  </f:entry>
+  <f:entry title="Show messages for queued builds and on build and console pages" field="showBuildWarnings">
+    <f:checkbox default="true" />
+  </f:entry>
+  <f:entry title="Check warning status every (seconds)" field="refreshSeconds">
+    <f:number min="15" max="300" default="30" />
+    <f:description>15–300 seconds. Default: 30.</f:description>
+  </f:entry>
+</j:jelly>

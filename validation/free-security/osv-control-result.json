@@ -1,0 +1,7 @@
+{
+  "actualExit": 1,
+  "result": "PASS",
+  "log4shellDetected": true,
+  "expectedExit": 1,
+  "test": "Known-vulnerable package metadata only; no vulnerable code downloaded or executed"
+}

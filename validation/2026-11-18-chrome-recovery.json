@@ -1,0 +1,99 @@
+{
+  "date": "2026-11-18",
+  "result": "PASS",
+  "browser": "Chrome",
+  "recovery": "Fresh review tab and normal sign-in; no security settings or guards changed",
+  "artifactSha256": "1d8b47b3f6a52aa4bd4adfb731488f11c76eb5b4bcc319e6cf87ca1a03cdb024",
+  "productionCodeChanged": false,
+  "existingConfigurationFilesUnchanged": 29,
+  "originalRequestedNodesOnline": true,
+  "originalQueueItem15Retained": true,
+  "fixture": {
+    "elapsedSeconds": 481.3427506,
+    "heapAfterGcBytes": 95940472,
+    "baselineHeapBytes": 99657744,
+    "liveThreads": 63,
+    "baselineThreads": 64,
+    "cpuSeconds": 50.734375,
+    "queueChecks": 94000,
+    "completedBuilds": 9,
+    "httpRequests": 2368,
+    "httpP99Millis": 4.2768,
+    "finished": true
+  },
+  "views": [
+    {
+      "case": "Main queue lists both missing options on noRestriction only",
+      "url": "http://localhost:19085/",
+      "at": "2026-11-18T07:35:06.863Z",
+      "screenshot": "01-main-queue.png",
+      "visibleSeconds": 62
+    },
+    {
+      "case": "Save stays on original node form with two field-local errors",
+      "url": "http://localhost:19085/computer/noRestriction/configure",
+      "at": "2026-11-18T07:36:27.426Z",
+      "screenshot": "02-field-local-save.png",
+      "visibleSeconds": 56
+    },
+    {
+      "case": "Queue shows both, restriction-only, security-only and exact pattern mismatch",
+      "at": "2026-11-18T07:37:49.037Z",
+      "url": "http://localhost:52431/jenkins/",
+      "messages": [
+        "Node “slave3”: Job “soak-denied-pattern” does not match the required job-name pattern “soak-approved-.*”. Configure node",
+        "Node “slave2”: To run builds on this node: Turn on “Enable node-based security” under Node Properties. Configure node",
+        "Node “slave1”: To run builds on this node: Turn on “Restrict jobs execution at node” under Node Properties. Configure node",
+        "Node “slave0”: To run builds on this node: Turn on “Enable node-based security” under Node Properties. Turn on “Restrict jobs execution at node” under Node Properties. Configure node"
+      ],
+      "screenshot": "03-all-queue-combinations.png",
+      "visibleSeconds": 62
+    },
+    {
+      "case": "Pending job lists only missing restriction on slave1",
+      "at": "2026-11-18T07:39:44.55Z",
+      "url": "http://localhost:52431/jenkins/job/soak-approved-missing-1/",
+      "message": "Node “slave1”: To run builds on this node: Turn on “Restrict jobs execution at node” under Node Properties. Configure node",
+      "screenshot": "04-restriction-only-job.png",
+      "visibleSeconds": 60
+    },
+    {
+      "case": "Pending job lists only missing security on slave2",
+      "at": "2026-11-18T07:40:55.016Z",
+      "url": "http://localhost:52431/jenkins/job/soak-approved-missing-2/",
+      "message": "Node “slave2”: To run builds on this node: Turn on “Enable node-based security” under Node Properties. Configure node",
+      "screenshot": "05-security-only-job.png",
+      "visibleSeconds": 75
+    },
+    {
+      "case": "Compliant slave3 is online with no plugin setup warning",
+      "at": "2026-11-18T07:42:21.445Z",
+      "url": "http://localhost:52431/jenkins/computer/slave3/",
+      "screenshot": "06-compliant-node.png",
+      "visibleSeconds": 80
+    },
+    {
+      "case": "Pattern mismatch names the exact node, job and pattern without missing-option warnings",
+      "at": "2026-11-18T07:43:51.521Z",
+      "url": "http://localhost:52431/jenkins/job/soak-denied-pattern/",
+      "message": "Node “slave3”: Job “soak-denied-pattern” does not match the required job-name pattern “soak-approved-.*”. Configure node",
+      "screenshot": "07-pattern-job.png",
+      "visibleSeconds": 71
+    },
+    {
+      "case": "Final same-page Save and both field-local errors, full inspection pause",
+      "at": "2026-11-18T07:45:12.617Z",
+      "url": "http://localhost:19085/computer/noRestriction/configure",
+      "screenshot": "08-final-local-errors.png",
+      "visibleSeconds": 79
+    },
+    {
+      "case": "Original three requested nodes remain online; Nodes page left open",
+      "at": "2026-11-18T07:47:08.674Z",
+      "url": "http://localhost:19085/computer/",
+      "screenshot": "09-final-nodes.png"
+    }
+  ],
+  "scope": "Supplemental finite UI scenarios; not exhaustive coverage of every browser or provider",
+  "xray": "Still blocked: no configured JFrog/Xray service access"
+}

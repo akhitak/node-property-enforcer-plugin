@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-18",
+  "artifactSha256": "1d8b47b3f6a52aa4bd4adfb731488f11c76eb5b4bcc319e6cf87ca1a03cdb024",
+  "jenkins": "2.555.1",
+  "java": "21.0.13",
+  "matrixAuth": "3.2.10",
+  "javaTests": {
+    "passed": 67,
+    "skipped": 3,
+    "failed": 0
+  },
+  "javascriptTests": {
+    "failed": 0,
+    "passed": 28
+  },
+  "javaAndJavascriptCoveragePercent": 100,
+  "sonarGate": "PASS",
+  "qualityRulesUnchanged": true,
+  "nvd": [
+    {
+      "reportDate": "2026-11-18T06:02:17.826148300Z",
+      "scanner": "13.0.0",
+      "jobRestrictions": "job-restrictions-216.v0732cc7fb_076.jar",
+      "unsuppressedFindings": 0,
+      "suppressedFindings": 1,
+      "result": "PASS"
+    },
+    {
+      "reportDate": "2026-11-18T06:03:33.555429700Z",
+      "scanner": "13.0.0",
+      "jobRestrictions": "job-restrictions-242.v6edda_c9e4ca_f.jar",
+      "unsuppressedFindings": 0,
+      "suppressedFindings": 1,
+      "result": "PASS"
+    }
+  ],
+  "xray": {
+    "result": "BLOCKED",
+    "cliVersion": "2.133.0",
+    "reason": "No configured JFrog/Xray service URL or credentials"
+  },
+  "soaks": [
+    {
+      "jobRestrictionsVersion": "216.v0732cc7fb_076",
+      "measurementSeconds": 3601.1532512,
+      "queueChecks": 704000,
+      "completedBuilds": 63,
+      "httpRequests": 17726,
+      "httpP99Millis": 5.4172,
+      "baselineHeapBytes": 95317992,
+      "finalHeapBytes": 58290776,
+      "maxRetainedHeapGrowthBytes": 91144.0,
+      "baselineThreads": 62,
+      "finalThreads": 61,
+      "maxThreads": 66.0,
+      "averageCpuCoreFraction": 0.07362224862595151,
+      "criticalJvmErrorEvents": 0,
+      "recordedErrorEventsWithPluginStack": 9,
+      "maxGcPauseMillis": 128.3519,
+      "result": "PASS"
+    },
+    {
+      "jobRestrictionsVersion": "242.v6edda_c9e4ca_f",
+      "measurementSeconds": 1801.3288022,
+      "queueChecks": 352000,
+      "completedBuilds": 32,
+      "httpRequests": 8864,
+      "httpP99Millis": 5.5203,
+      "baselineHeapBytes": 95533792,
+      "finalHeapBytes": 57125680,
+      "maxRetainedHeapGrowthBytes": 98232.0,
+      "baselineThreads": 64,
+      "finalThreads": 61,
+      "maxThreads": 64.0,
+      "averageCpuCoreFraction": 0.0703560476272942,
+      "criticalJvmErrorEvents": 0,
+      "recordedErrorEventsWithPluginStack": 7,
+      "maxGcPauseMillis": 101.2101,
+      "result": "PASS"
+    }
+  ],
+  "recorderPrivacyCheck": {
+    "result": "PASS",
+    "measurementSeconds": 60.8266825,
+    "completedBuilds": 2,
+    "queueChecks": 11600,
+    "outOfScopeMetadataEvents": 0,
+    "jfrStartupChannelWarnings": 0,
+    "recordingSha256": "fb48425126668e8cf805a28f20065fa8f4465600429bde921cceedc815f87803"
+  },
+  "existingConfigurationFilesUnchanged": 29,
+  "limitations": "Finite isolated workloads; not a guarantee of zero defects, production-scale stability, or future Jenkins compatibility."
+}

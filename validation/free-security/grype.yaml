@@ -1,0 +1,15 @@
+check-for-app-update: false
+fail-on-severity: negligible
+only-fixed: false
+only-notfixed: false
+ignore: []
+exclude: []
+include-matcher-suppressions: true
+db:
+  auto-update: true
+  validate-by-hash-on-start: true
+  validate-age: true
+  max-allowed-built-age: 24h
+  require-update-check: true
+  max-update-check-frequency: 0s
+match-upstream-kernel-headers: true

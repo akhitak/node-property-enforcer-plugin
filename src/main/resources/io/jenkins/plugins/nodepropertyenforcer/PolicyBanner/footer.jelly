@@ -1,0 +1,14 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler">
+  <j:set var="formPolicy" value="${it.formPolicy}" />
+  <j:if test="${formPolicy != null}">
+    <div id="node-property-form-policy" data-policy="${formPolicy}" data-value-url="${rootURL}/descriptorByName/io.jenkins.plugins.nodepropertyenforcer.Requirement/validateRestrictionValue" hidden="hidden"></div>
+    <st:adjunct includes="io.jenkins.plugins.nodepropertyenforcer.formGuard" />
+  </j:if>
+  <j:set var="statusUrl" value="${it.statusUrl}" />
+  <j:if test="${statusUrl != null}">
+    <div id="node-property-banner" data-status-url="${statusUrl}" class="jenkins-alert jenkins-alert-warning" role="status" aria-live="polite" hidden="hidden"></div>
+    <st:adjunct includes="io.jenkins.plugins.nodepropertyenforcer.banner" />
+  </j:if>
+</j:jelly>
+

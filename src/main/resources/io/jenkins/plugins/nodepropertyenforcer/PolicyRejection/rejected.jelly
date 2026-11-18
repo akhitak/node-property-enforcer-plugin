@@ -1,0 +1,13 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:l="/lib/layout" xmlns:st="jelly:stapler">
+  <l:layout title="Update node settings">
+    <l:main-panel>
+      <h1>Update node settings</h1>
+      <div class="jenkins-alert jenkins-alert-warning" role="alert">${request.getAttribute('nodePropertyPolicy.error')}</div>
+      <p>These changes were not saved. Review the message above, then return to the form to try again.</p>
+      <button type="button" id="node-policy-back" class="jenkins-button jenkins-button--primary">Back to configuration</button>
+      <a class="jenkins-button" href="${rootURL}/computer/">View nodes</a>
+      <st:adjunct includes="io.jenkins.plugins.nodepropertyenforcer.rejection" />
+    </l:main-panel>
+  </l:layout>
+</j:jelly>

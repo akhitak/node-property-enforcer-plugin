@@ -1,0 +1,6 @@
+<div>
+  <p><strong>Checked:</strong> explain missing required settings and job-name restrictions beside a queued build when none of its matching online nodes can run it. On build and console pages, show a message below the heading if a node used by that build is now missing a required option. These messages refer to the node's current settings, even when the build has already finished.</p>
+  <p><strong>Unchecked:</strong> hide this plugin's queue, build and console messages. Jenkins' own queue explanations remain visible. The separate settings for starting new builds and saving nodes still apply.</p>
+  <p>These messages do not stop a running build, edit its console output or change its result.</p>
+  <p>Tested with standard Freestyle console pages. Older Pipeline builds from before plugin installation have no saved node history. Other build types and console views need their own compatibility checks.</p>
+</div>

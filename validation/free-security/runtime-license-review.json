@@ -1,0 +1,93 @@
+[
+  {
+    "purl": "pkg:maven/io.jenkins.plugins/ionicons-api@88.va_4187cb_eddf1",
+    "declared": [
+      "MIT License"
+    ],
+    "spdx": [
+      "MIT"
+    ],
+    "evidenceLocations": [
+      "/ionicons-api-88.va_4187cb_eddf1.jar"
+    ],
+    "allowed": true
+  },
+  {
+    "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.22.4",
+    "declared": [
+      "https://www.apache.org/licenses/LICENSE-2.0.txt"
+    ],
+    "spdx": [
+      "Apache-2.0"
+    ],
+    "evidenceLocations": [
+      "/node-property-enforcer-0.1.0-SNAPSHOT.jpi:WEB-INF/lib/jackson-core-2.22.4.jar"
+    ],
+    "allowed": true
+  },
+  {
+    "purl": "pkg:maven/com.synopsys.arc.jenkinsci.plugins/job-restrictions@216.v0732cc7fb_076",
+    "declared": [
+      "MIT License"
+    ],
+    "spdx": [
+      "MIT"
+    ],
+    "evidenceLocations": [
+      "/job-restrictions-216.v0732cc7fb_076.jar"
+    ],
+    "allowed": true
+  },
+  {
+    "purl": "pkg:maven/com.synopsys.arc.jenkinsci.plugins/job-restrictions@242.v6edda_c9e4ca_f",
+    "declared": [
+      "MIT License"
+    ],
+    "spdx": [
+      "MIT"
+    ],
+    "evidenceLocations": [
+      "/job-restrictions-242.v6edda_c9e4ca_f.jar"
+    ],
+    "allowed": true
+  },
+  {
+    "purl": "pkg:maven/org.jenkins-ci.plugins/matrix-auth@3.2.10",
+    "declared": [
+      "MIT"
+    ],
+    "spdx": [
+      "MIT"
+    ],
+    "evidenceLocations": [
+      "/matrix-auth-3.2.10.jar"
+    ],
+    "allowed": true
+  },
+  {
+    "purl": "pkg:maven/io.jenkins.plugins/node-property-enforcer@0.1.0-SNAPSHOT",
+    "declared": [
+      "MIT License"
+    ],
+    "spdx": [
+      "MIT"
+    ],
+    "evidenceLocations": [
+      "/node-property-enforcer-0.1.0-SNAPSHOT.jpi"
+    ],
+    "allowed": true
+  },
+  {
+    "purl": "pkg:maven/io.jenkins.plugins/node-property-enforcer@0.1.0-SNAPSHOT",
+    "declared": [
+      "MIT License"
+    ],
+    "spdx": [
+      "MIT"
+    ],
+    "evidenceLocations": [
+      "/node-property-enforcer-0.1.0-SNAPSHOT.jpi:WEB-INF/lib/node-property-enforcer.jar"
+    ],
+    "allowed": true
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "actualExit": 2,
+  "test": "Known-vulnerable SBOM metadata only; no vulnerable code downloaded or executed",
+  "result": "PASS",
+  "log4shellDetected": true,
+  "expectedExit": 2
+}

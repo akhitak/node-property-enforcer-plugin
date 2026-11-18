@@ -1,0 +1,13 @@
+{
+  "remediationEnabled": false,
+  "completedAt": "2026-11-18T14:20:48.1504285+05:30",
+  "exitCode": 0,
+  "scope": "PLUGIN_WORKSPACE\\.work\\free-security-inputs\\artifacts",
+  "startedAt": "2026-11-18T14:20:34.2804815+05:30",
+  "engine": {
+    "AntivirusSignatureLastUpdated": "2026-11-17T22:58:22+05:30",
+    "AntivirusSignatureVersion": "1.463.349.0",
+    "AntivirusEnabled": true,
+    "AMServiceEnabled": true
+  }
+}
