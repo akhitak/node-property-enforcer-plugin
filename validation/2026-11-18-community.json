@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-18",
+  "jenkins": "2.555.3",
+  "java": "21",
+  "artifactId": "node-property-enforcer",
+  "artifactSha256": "62a0208ad6ab31b536160310bcf069dd2bf96043f6ab5b236027dedf238b9522",
+  "mavenVerify": "PASS",
+  "javaTests": {
+    "errors": 0,
+    "passed": 67,
+    "failures": 0,
+    "total": 70,
+    "skipped": 3,
+    "skips": "Existing opt-in browser fixture, soak fixture and harness skip; unchanged"
+  },
+  "coverage": [
+    {
+      "covered": 3411,
+      "type": "INSTRUCTION",
+      "missed": 0
+    },
+    {
+      "covered": 438,
+      "type": "BRANCH",
+      "missed": 0
+    },
+    {
+      "covered": 700,
+      "type": "LINE",
+      "missed": 0
+    },
+    {
+      "covered": 432,
+      "type": "COMPLEXITY",
+      "missed": 0
+    },
+    {
+      "covered": 207,
+      "type": "METHOD",
+      "missed": 0
+    },
+    {
+      "covered": 26,
+      "type": "CLASS",
+      "missed": 0
+    }
+  ],
+  "javascriptTests": {
+    "coveragePercent": 100,
+    "passed": 30,
+    "scope": "Same production JavaScript bytes as the final candidate"
+  },
+  "spotbugsFindings": 0,
+  "gitleaksFindings": 0,
+  "grype": {
+    "ignored": 0,
+    "packages": 63,
+    "databaseValid": true,
+    "findings": 0
+  },
+  "osv": {
+    "exitCode": 0,
+    "findings": 0
+  },
+  "nvd": {
+    "findings": 0,
+    "details": "CVE-2024-23900 belongs to matrix-project, incorrectly mapped to matrix-auth 3.3. Exact package/CVE correction expires 2027-02-13.",
+    "source": "https://www.jenkins.io/security/advisory/2024-01-24/#SECURITY-3289",
+    "dependencies": 44,
+    "documentedFalsePositive": 1
+  },
+  "hostingChecker": "PASS with no Required issues",
+  "githubSecurityScan": "https://github.com/akhitak/node-property-enforcer-plugin/actions/runs/44317137756",
+  "productionSourceChanged": false,
+  "existingJenkinsModified": false,
+  "limitations": "Finite automated checks, not a guarantee of zero defects or future compatibility. Previous Chrome Matrix 3.3 validation is recorded separately; no new manual browser/long soak run in this publication pass."
+}

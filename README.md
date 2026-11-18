@@ -96,7 +96,7 @@ Matrix node permissions also require **Project-based Matrix Authorization Strate
 |---|---|---|
 | Matrix Authorization Strategy | 3.3 | Selected by the Jenkins plugin BOM required for this community candidate |
 | Job Restrictions | 242.v6edda_c9e4ca_f | Selected by the Jenkins plugin BOM for the community release; the separate evaluation build supports 216.v0732cc7fb_076 |
-| Ionicons API | 88.va_4187cb_eddf1 | Transitive minimum requested by Matrix Auth |
+| Ionicons API | 94.vcc3065403257 | Transitive dependency selected by the community BOM |
 | Jackson API | 2.22.4-449.v4ee9f4ec4123 | Jenkins' shared Jackson provider; this plugin uses Core for bounded strict JSON parsing |
 
 These are **supported minimums**, not a claim that every older historical release is incompatible. The oldest version that merely loads is not necessarily a safe or maintainable choice. Matrix Auth releases before 3.2.10 have a [published deserialization issue](https://www.jenkins.io/security/advisory/2026-04-29/). Job Restrictions has much older releases, but they are not certified by this project. A newer installed dependency satisfies Jenkins' minimum-version manifest.
@@ -121,7 +121,7 @@ Optional plugin-scope dependency scan:
 mvn -Psecurity-audit verify
 ```
 
-The profile downloads the official NVD JSON 2.0 feeds, avoiding Dependency-Check 13.0.0's empty API-key defect. It fails on scanner errors or any unsuppressed CVSS finding, including score zero. Provided Jenkins/core and test dependencies are outside this plugin-only scan. The one narrowly scoped, expiring suppression corrects Dependency-Check's mapping of `matrix-auth:3.2.10` to the **different** `matrix-project` product (CVE-2024-23900), with a primary advisory link in the suppression file. Scan evidence and limitations are recorded in `VALIDATION.md`.
+The profile downloads the official NVD JSON 2.0 feeds, avoiding Dependency-Check 13.0.0's empty API-key defect. It fails on scanner errors or any unsuppressed CVSS finding, including score zero. Provided Jenkins/core and test dependencies are outside this plugin-only scan. The one narrowly scoped, expiring suppression corrects Dependency-Check's mapping of `matrix-auth:3.3` to the **different** `matrix-project` product (CVE-2024-23900), with a primary advisory link in the suppression file. Scan evidence and limitations are recorded in `VALIDATION.md`.
 
 For an isolated hour-long endurance check on Windows:
 
