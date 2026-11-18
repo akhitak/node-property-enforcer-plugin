@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-18",
+  "artifactId": "node-property-enforcer",
+  "jenkins": "2.555.3",
+  "java": "21",
+  "productionCommit": "50b47bafbc9d56d7537fc3bd3fff2fb7844bd4c0",
+  "artifactSha256": "f252bfbd5f5563106207178073e6ea98b177a411e6d07ebf49c563d24707b1d0",
+  "changes": [
+    "Explicit POST form validation and dropdown routes; explicit GET read-only status routes",
+    "Overall/Read permission check on fallback form error route",
+    "Empty option model for callers without Overall/Administer",
+    "Analyzer-visible permission stubs and isolated exception assertion setup in tests",
+    "Version documentation points to the POM"
+  ],
+  "mavenVerify": "PASS",
+  "javaTests": {
+    "errors": 0,
+    "passed": 68,
+    "skips": "Existing opt-in browser/soak fixtures and harness skip; unchanged",
+    "failures": 0,
+    "total": 71,
+    "skipped": 3
+  },
+  "coverage": [
+    {
+      "type": "INSTRUCTION",
+      "covered": 3417,
+      "missed": 0
+    },
+    {
+      "type": "BRANCH",
+      "covered": 440,
+      "missed": 0
+    },
+    {
+      "type": "LINE",
+      "covered": 701,
+      "missed": 0
+    },
+    {
+      "type": "COMPLEXITY",
+      "covered": 433,
+      "missed": 0
+    },
+    {
+      "type": "METHOD",
+      "covered": 207,
+      "missed": 0
+    },
+    {
+      "type": "CLASS",
+      "covered": 26,
+      "missed": 0
+    }
+  ],
+  "finalTestOnlyAdjustment": {
+    "routeRetest": "PASS",
+    "reason": "Sonar java:S5778: create mocks outside the exception assertion lambda",
+    "productionCodeAndArtifactUnchanged": true
+  },
+  "javascriptTests": {
+    "coveragePercent": 100,
+    "passed": 30
+  },
+  "spotbugsFindings": 0,
+  "gitleaksFindings": 0,
+  "sonar": {
+    "ruleExclusionsAdded": false,
+    "coveragePercent": 100,
+    "bugs": 0,
+    "branchCoveragePercent": 100,
+    "vulnerabilities": 0,
+    "gate": "OK",
+    "codeSmells": 0
+  },
+  "securityScan": {
+    "after": 0,
+    "suppressionsAdded": 0,
+    "before": 8,
+    "run": "https://github.com/akhitak/node-property-enforcer-plugin/actions/runs/44320833112",
+    "rawAndProcessedSarifInspected": true,
+    "hostingResult": "https://github.com/jenkins-infra/repository-permissions-updater/issues/5464#issuecomment-6981139077"
+  },
+  "grype": {
+    "ignored": 0,
+    "databaseValid": true,
+    "packages": 63,
+    "findings": 0
+  },
+  "osv": {
+    "npmTestPackages": 95,
+    "runtimePackages": 63,
+    "findings": 0
+  },
+  "nvd": {
+    "dependencies": 44,
+    "details": "Existing exact-package CVE-2024-23900 correction for matrix-auth 3.3, expires 2027-02-13; advisory concerns matrix-project",
+    "documentedFalsePositive": 1,
+    "findings": 0
+  },
+  "browserValidation": {
+    "environment": "Disposable Jenkins test-harness fixture on port 57325 using the verified production classes",
+    "checks": [
+      "Options dropdown loads with POST",
+      "Unavailable Matrix setup message appears only for that selection and clears for available options",
+      "Global configuration saves valid requirements",
+      "Node status GET displays both missing requirements with configuration link",
+      "Queue GET displays both missing requirements for the assigned node only; build remains queued",
+      "Save stays on node form and focuses missing checkbox; enabling one removes only its error",
+      "No restriction cannot be saved; message appears under the restriction selector"
+    ],
+    "screensLeftForReviewSeconds": 60,
+    "fixtureStopped": true,
+    "browser": "In-app browser after Chrome navigation and capture timed out",
+    "result": "PASS"
+  },
+  "hosting": {
+    "automated": "PASS without recommendations",
+    "humanReview": "Pending",
+    "labels": [
+      "bot-check-complete",
+      "security-audit-done"
+    ],
+    "request": "https://github.com/jenkins-infra/repository-permissions-updater/issues/5464"
+  },
+  "existingJenkinsModified": false,
+  "otherPluginsModified": false,
+  "limitations": "Finite automated and focused UI validation, not a guarantee of zero defects or future compatibility. No new long soak in this HTTP-route/test-only follow-up. No release tag or community catalog release yet."
+}

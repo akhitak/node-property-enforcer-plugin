@@ -47,20 +47,21 @@ class RouteSecurityTest {
         j.jenkins.setSecurityRealm(j.createDummySecurityRealm());
         j.jenkins.setAuthorizationStrategy(
                 new MockAuthorizationStrategy().grant(Jenkins.READ).everywhere().to("reader"));
+        var rejection = new PolicyRejection();
+        var request = mock(StaplerRequest2.class);
+        var response = mock(StaplerResponse2.class);
         try (var ignored = ACL.as2(Jenkins.ANONYMOUS2)) {
-            assertThrows(
-                    AccessDeniedException.class,
-                    () -> new PolicyRejection().doIndex(mock(StaplerRequest2.class), mock(StaplerResponse2.class)));
+            assertThrows(AccessDeniedException.class, () -> rejection.doIndex(request, response));
         }
         try (var client = j.createWebClient().withBasicCredentials("reader")) {
             var post = new WebRequest(
                     client.createCrumbedUrl("descriptorByName/" + Requirement.class.getName() + "/fillPropertyIdItems"),
                     HttpMethod.POST);
-            var response = client.getPage(post).getWebResponse();
-            assertEquals(200, response.getStatusCode());
+            var result = client.getPage(post).getWebResponse();
+            assertEquals(200, result.getStatusCode());
             assertEquals(
                     0,
-                    net.sf.json.JSONObject.fromObject(response.getContentAsString())
+                    net.sf.json.JSONObject.fromObject(result.getContentAsString())
                             .getJSONArray("values")
                             .size());
         }
