@@ -33,6 +33,7 @@ public final class PolicyStatus extends InvisibleAction {
         return "node-property-status";
     }
 
+    @org.kohsuke.stapler.verb.GET
     public HttpResponse doIndex() {
         Jenkins.get().checkPermission(Jenkins.READ);
         if (run != null) {

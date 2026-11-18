@@ -69,6 +69,7 @@ public final class PolicyBehavior extends AbstractDescribableImpl<PolicyBehavior
 
     @Extension
     public static final class DescriptorImpl extends Descriptor<PolicyBehavior> {
+        @org.kohsuke.stapler.verb.POST
         public FormValidation doCheckRefreshSeconds(@QueryParameter String value) {
             Jenkins.get().checkPermission(Jenkins.ADMINISTER);
             return validateRefreshSeconds(value);

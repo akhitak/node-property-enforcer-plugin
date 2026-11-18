@@ -23,6 +23,7 @@ public final class QueueMessages extends PageDecorator {
         return NodePropertyPolicy.get().getBehavior().isShowBuildWarnings();
     }
 
+    @org.kohsuke.stapler.verb.GET
     public HttpResponse doStatus(@QueryParameter String ids) {
         Jenkins.get().checkPermission(Jenkins.READ);
         String[] requested = requestedIds(ids);

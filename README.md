@@ -1,7 +1,7 @@
 # Node Property Enforcer
 
 Require selected node settings before users save an agent configuration or start new builds on that agent. Administrators choose the required properties and whether existing agents should show warnings or wait for configuration before accepting more builds. Running builds continue normally.
-Baseline: **Jenkins 2.555.3, Java 21**. No Jenkins patches, bytecode agents, or core replacements.
+See [pom.xml](pom.xml) for the minimum Jenkins version and the [Jenkins Java support policy](https://www.jenkins.io/doc/book/platform-information/support-policy-java/) for the corresponding Java requirements. No Jenkins patches, bytecode agents, or core replacements.
 
 ## Supported node properties
 
@@ -143,8 +143,6 @@ It requires an existing JFrog Platform connection with Xray access and a watch w
 
 ## Community publication and ongoing support
 
-The original source and evaluation JPI are published in [akhitak/JenkinsPlugins](https://github.com/akhitak/JenkinsPlugins). This community candidate is being prepared separately. It is not yet listed in the Jenkins plugin manager. The confirmed community plugin ID is `node-property-enforcer`. The maintainer account is akhitak. Publication still requires completed candidate verification, hosting checks, hosting review, and release permissions. See the [Jenkins hosting guide](https://www.jenkins.io/doc/developer/publishing/requesting-hosting/).
-
-The current hosting checker requires a Jenkins 2.555.3 minimum. The maintainer approved 2.555.3 for this community candidate. The earlier evaluation JPI retains its original dependency minimums and has not been replaced by this candidate. The validation records describe that earlier build until new results explicitly identify the community candidate.
+Hosting is requested in [jenkins-infra/repository-permissions-updater#5464](https://github.com/jenkins-infra/repository-permissions-updater/issues/5464). This repository contains only `node-property-enforcer`; the separate evaluation artifacts and other plugins in `akhitak/JenkinsPlugins` are outside the hosting request. Candidate verification is recorded under [validation](validation). Hosting/security review and release permissions are still required before a community release.
 
 Keep the baseline stable, test selected later LTS and weekly releases, and retest on Java and dependency upgrades. Supported public extension points reduce maintenance risk; they cannot guarantee compatibility with every future release or zero vulnerabilities for years.

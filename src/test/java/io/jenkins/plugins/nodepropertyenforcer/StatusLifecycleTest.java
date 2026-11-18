@@ -110,7 +110,7 @@ class StatusLifecycleTest {
                             .getJSONArray("problems")
                             .getJSONObject(0)
                             .getString("url"));
-            doReturn(false).when(node).hasPermission(Computer.CONFIGURE);
+            when(node.hasPermission(Computer.CONFIGURE)).thenReturn(false);
             assertFalse(json(status.doIndex())
                     .getJSONArray("problems")
                     .getJSONObject(0)

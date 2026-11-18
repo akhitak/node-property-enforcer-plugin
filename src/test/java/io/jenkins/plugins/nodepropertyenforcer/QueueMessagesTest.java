@@ -179,7 +179,7 @@ class QueueMessagesTest {
             assertEquals(
                     "/jenkins/computer/agent/configure",
                     QueueMessages.messages(queued, policy).getFirst().getString("url"));
-            doReturn(false).when(agent).hasPermission(Computer.CONFIGURE);
+            when(agent.hasPermission(Computer.CONFIGURE)).thenReturn(false);
             assertFalse(QueueMessages.messages(queued, policy).getFirst().containsKey("url"));
             policy.replace(List.of(new Requirement(EnvironmentVariablesNodeProperty.class.getName())));
             assertTrue(QueueMessages.messages(queued, policy)

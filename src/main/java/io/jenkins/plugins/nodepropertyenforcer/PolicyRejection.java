@@ -5,6 +5,7 @@ import hudson.model.InvisibleAction;
 import hudson.model.RootAction;
 import jakarta.servlet.ServletException;
 import java.io.IOException;
+import jenkins.model.Jenkins;
 import org.kohsuke.stapler.HttpResponses;
 import org.kohsuke.stapler.StaplerRequest2;
 import org.kohsuke.stapler.StaplerResponse2;
@@ -20,6 +21,7 @@ public final class PolicyRejection extends InvisibleAction implements RootAction
 
     @RequirePOST
     public void doIndex(StaplerRequest2 request, StaplerResponse2 response) throws IOException, ServletException {
+        Jenkins.get().checkPermission(Jenkins.READ);
         if (request.getAttribute("nodePropertyPolicy.error") == null) {
             throw HttpResponses.notFound();
         }

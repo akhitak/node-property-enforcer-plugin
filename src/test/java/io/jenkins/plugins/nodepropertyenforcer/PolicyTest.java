@@ -201,7 +201,7 @@ class PolicyTest {
             assertThrows(
                     AccessDeniedException.class,
                     () -> policy.configure((org.kohsuke.stapler.StaplerRequest2) null, form));
-            assertThrows(AccessDeniedException.class, descriptor::doFillPropertyIdItems);
+            assertTrue(descriptor.doFillPropertyIdItems().isEmpty());
             assertThrows(AccessDeniedException.class, () -> descriptor.doCheckPropertyId(MATRIX, true));
         }
     }

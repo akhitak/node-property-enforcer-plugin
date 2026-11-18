@@ -13,6 +13,7 @@ import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.HttpResponse;
 import org.kohsuke.stapler.QueryParameter;
 import org.kohsuke.stapler.interceptor.RequirePOST;
+import org.kohsuke.stapler.verb.POST;
 
 /** A stable descriptor ID, never a user-supplied class to instantiate. */
 public final class Requirement extends AbstractDescribableImpl<Requirement> {
@@ -46,9 +47,10 @@ public final class Requirement extends AbstractDescribableImpl<Requirement> {
             return "Required node option";
         }
 
+        @POST
         public ListBoxModel doFillPropertyIdItems() {
-            Jenkins.get().checkPermission(Jenkins.ADMINISTER);
             ListBoxModel options = new ListBoxModel();
+            if (!Jenkins.get().hasPermission(Jenkins.ADMINISTER)) return options;
             options.add("Choose an option to require", "");
             NodeProperty.all()
                     .forEach(d -> options.add(
@@ -64,6 +66,7 @@ public final class Requirement extends AbstractDescribableImpl<Requirement> {
             return options;
         }
 
+        @POST
         public FormValidation doCheckPropertyId(@QueryParameter String value, @QueryParameter boolean enabled) {
             Jenkins.get().checkPermission(Jenkins.ADMINISTER);
             if (!enabled || value == null || value.isBlank()) return FormValidation.ok();
