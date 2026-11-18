@@ -1,4 +1,5 @@
 target/
+work/
 dist/
 .work/
 .local/

@@ -1,9 +1,9 @@
 # Node Property Enforcer
 
-An independent Jenkins plugin for administrator-selected mandatory agent properties.
-Baseline: **Jenkins 2.555.1, Java 21**. No Jenkins patches, bytecode agents, or core replacements.
+Require selected node settings before users save an agent configuration or start new builds on that agent. Administrators choose the required properties and whether existing agents should show warnings or wait for configuration before accepting more builds. Running builds continue normally.
+Baseline: **Jenkins 2.555.3, Java 21**. No Jenkins patches, bytecode agents, or core replacements.
 
-## What the screenshots show
+## Supported node properties
 
 | Option | Provider | Property |
 |---|---|---|
@@ -25,8 +25,6 @@ Sources: [Matrix Auth source](https://github.com/jenkinsci/matrix-auth-plugin/bl
 Empty rows are ignored when saving. An empty list, or disabling every individual rule, leaves enforcement inactive. A saved policy survives restart. A corrupt/unreadable policy fails closed until repaired. Restart is required for installation, disabling and removal.
 
 Install or enable a missing provider in Jenkins' plugin manager and restart; its option can then be required, without automatically enforcing it. Do not downgrade newer installed providers to match a minimum. An installed provider must meet its declared minimum. If a previously enforced provider disappears, its saved rule continues to fail compliance until the rule is disabled/removed or the provider is restored. This prevents silent loss of enforcement.
-
-Matrix Authorization 3.2.10's permission table and 3.3's expandable permission cards are supported. Creator grants and empty-permission validation work with both layouts. These compatibility checks do not change the minimum dependency versions in this evaluation build.
 
 ## Administrator controls
 
@@ -96,10 +94,10 @@ Matrix node permissions also require **Project-based Matrix Authorization Strate
 
 | Optional integration / library | Declared minimum | Reason |
 |---|---|---|
-| Matrix Authorization Strategy | 3.2.10 | Earliest version fixing SECURITY-3676; matches the supplied installation |
-| Job Restrictions | 216.v0732cc7fb_076 | Tested support floor used in the Chrome fixture; compatibility tests also cover 242.v6edda_c9e4ca_f |
+| Matrix Authorization Strategy | 3.3 | Selected by the Jenkins plugin BOM required for this community candidate |
+| Job Restrictions | 242.v6edda_c9e4ca_f | Selected by the Jenkins plugin BOM for the community release; the separate evaluation build supports 216.v0732cc7fb_076 |
 | Ionicons API | 88.va_4187cb_eddf1 | Transitive minimum requested by Matrix Auth |
-| Jackson Core (library, bundled and package-masked) | 2.22.4 | Bounded strict JSON parsing without Jackson Databind |
+| Jackson API | 2.22.4-449.v4ee9f4ec4123 | Jenkins' shared Jackson provider; this plugin uses Core for bounded strict JSON parsing |
 
 These are **supported minimums**, not a claim that every older historical release is incompatible. The oldest version that merely loads is not necessarily a safe or maintainable choice. Matrix Auth releases before 3.2.10 have a [published deserialization issue](https://www.jenkins.io/security/advisory/2026-04-29/). Job Restrictions has much older releases, but they are not certified by this project. A newer installed dependency satisfies Jenkins' minimum-version manifest.
 
@@ -145,6 +143,8 @@ It requires an existing JFrog Platform connection with Xray access and a watch w
 
 ## Community publication and ongoing support
 
-The confirmed community plugin ID is `node-property-enforcer`. This dedicated repository contains the verified evaluation source from [akhitak/JenkinsPlugins commit c03352c](https://github.com/akhitak/JenkinsPlugins/tree/c03352ce77fc215f73056ce114711b5dad311b08/node-property-enforcer); the evaluation JPI remains available in that repository. This is a development candidate, not an approved Jenkins community release or a listing in the Jenkins plugin manager. Community hosting still requires the maintainer community account, the minimum Jenkins version decision, final hosting checks, hosting review, and release permissions. See the [Jenkins hosting guide](https://www.jenkins.io/doc/developer/publishing/requesting-hosting/).
+The original source and evaluation JPI are published in [akhitak/JenkinsPlugins](https://github.com/akhitak/JenkinsPlugins). This community candidate is being prepared separately. It is not yet listed in the Jenkins plugin manager. The confirmed community plugin ID is `node-property-enforcer`. The maintainer account is akhitak. Publication still requires completed candidate verification, hosting checks, hosting review, and release permissions. See the [Jenkins hosting guide](https://www.jenkins.io/doc/developer/publishing/requesting-hosting/).
+
+The current hosting checker requires a Jenkins 2.555.3 minimum. The maintainer approved 2.555.3 for this community candidate. The earlier evaluation JPI retains its original dependency minimums and has not been replaced by this candidate. The validation records describe that earlier build until new results explicitly identify the community candidate.
 
 Keep the baseline stable, test selected later LTS and weekly releases, and retest on Java and dependency upgrades. Supported public extension points reduce maintenance risk; they cannot guarantee compatibility with every future release or zero vulnerabilities for years.

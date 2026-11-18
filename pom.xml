@@ -9,11 +9,11 @@
   </parent>
   <groupId>io.jenkins.plugins</groupId>
   <artifactId>node-property-enforcer</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>${changelist}</version>
   <packaging>hpi</packaging>
   <name>Node Property Enforcer</name>
   <description>Administrator-selected mandatory agent properties with server-side form validation and scheduling enforcement.</description>
-  <url>https://www.jenkins.io/</url>
+  <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
   <licenses>
     <license>
       <name>MIT License</name>
@@ -21,21 +21,23 @@
     </license>
   </licenses>
   <scm>
-    <connection>${unpublished.scm}</connection>
-    <developerConnection>${unpublished.scm}</developerConnection>
-    <tag>${unpublished.scm}</tag>
-    <url>${unpublished.scm}</url>
+    <connection>scm:git:https://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/jenkinsci/${project.artifactId}-plugin.git</developerConnection>
+    <tag>${scmTag}</tag>
+    <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
   </scm>
   <properties>
-    <unpublished.scm />
-    <jenkins.version>2.555.1</jenkins.version>
-    <maven.compiler.release>21</maven.compiler.release>
+    <scmTag>HEAD</scmTag>
+    <changelist>999999-SNAPSHOT</changelist>
+    <jenkins.baseline>2.555</jenkins.baseline>
+    <jenkins.version>${jenkins.baseline}.3</jenkins.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <spotless.check.skip>false</spotless.check.skip>
-    <matrix-auth.version>3.2.10</matrix-auth.version>
-    <job-restrictions.version>216.v0732cc7fb_076</job-restrictions.version>
-    <hpi.bundledArtifacts>jackson-core</hpi.bundledArtifacts>
     <hpi.strictBundledArtifacts>true</hpi.strictBundledArtifacts>
+    <ban-commons-lang-2.skip>false</ban-commons-lang-2.skip>
+    <ban-deprecated-stapler.skip>false</ban-deprecated-stapler.skip>
+    <ban-junit4-imports.skip>false</ban-junit4-imports.skip>
+    <banObsoleteDependencyOverrides.skip>false</banObsoleteDependencyOverrides.skip>
     <sonar.projectKey>node-property-enforcer</sonar.projectKey>
     <sonar.projectName>Node Property Enforcer</sonar.projectName>
     <sonar.sources>src/main,pom.xml</sonar.sources>
@@ -44,28 +46,31 @@
     <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
     <sonar.qualitygate.ignoreSmallChanges>false</sonar.qualitygate.ignoreSmallChanges>
   </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.jenkins.tools.bom</groupId>
+        <artifactId>bom-${jenkins.baseline}.x</artifactId>
+        <version>7349.vd0a_cb_6c87a_31</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-      <version>2.22.4</version>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>jackson2-api</artifactId>
     </dependency>
     <dependency>
       <groupId>com.synopsys.arc.jenkinsci.plugins</groupId>
       <artifactId>job-restrictions</artifactId>
-      <version>${job-restrictions.version}</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>matrix-auth</artifactId>
-      <version>${matrix-auth.version}</version>
       <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
@@ -88,13 +93,6 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.jenkins-ci.tools</groupId>
-        <artifactId>maven-hpi-plugin</artifactId>
-        <configuration>
-          <maskClasses>com.fasterxml.jackson.core.</maskClasses>
-        </configuration>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
@@ -106,8 +104,8 @@
             <phase>package</phase>
             <configuration>
               <target>
-                <copy file="${project.build.directory}/${project.build.finalName}.hpi" tofile="${project.build.directory}/node-property-enforcer.jpi" />
-                <checksum algorithm="SHA-256" file="${project.build.directory}/node-property-enforcer.jpi" />
+                <copy file="${project.build.directory}/${project.build.finalName}.hpi" tofile="${project.build.directory}/${project.artifactId}.jpi" />
+                <checksum algorithm="SHA-256" file="${project.build.directory}/${project.artifactId}.jpi" />
               </target>
             </configuration>
           </execution>
